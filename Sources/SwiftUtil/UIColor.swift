@@ -8,7 +8,7 @@
 import UIKit
 
 public extension UIColor {
-    convenience init?(fromString hex: String, alpha: CGFloat = 1.0) {
+    convenience init?(fromHex hex: String, alpha: CGFloat = 1.0) {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
         if (cString.hasPrefix("#")) {
