@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Collection.swift
 //  
 //
 //  Created by Minhyuk Kim on 2020/04/26.
