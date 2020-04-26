@@ -31,7 +31,7 @@ public extension UIColor {
     }
     
     static func hexStringToUIColor (hex: String, alpha: CGFloat = 1.0) -> UIColor? {
-        return UIColor(fromString: hex, alpha: alpha)
+        return UIColor(fromHex: hex, alpha: alpha)
     }
     
     func toHexString() -> String {
