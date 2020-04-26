@@ -6,4 +6,7 @@ Forget about creating a new `Utils` folder and adding the same extensions again 
 
 Simply add `SwiftUtil` to get going with the essential Swift Utility functions.
 
+### Usage
+In your Xcode Project, go to File -> Swift Packages -> Add Package Dependency -> `https://github.com/mininny/SwiftUtil`
+
 Feel free to create requests for new methods!
