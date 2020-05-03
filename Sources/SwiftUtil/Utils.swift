@@ -10,6 +10,7 @@ import Foundation
 class Utils {
     static let objc = Objc.self
     static let alerts = Alerts.self
+    static let keyboard = Keyboard()
     
     fileprivate init() { }
 }

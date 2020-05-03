@@ -24,13 +24,13 @@ class Alerts {
         vc.present(alert, animated: options.animate, completion: completion)
     }
     
-    public enum Option {
-        case defaultTitle(_ title: String = "OK")
-        case cancelTitle(_ title: String = "Cancel")
-        case showCancel(_ show: Bool = true)
-        case showOK(_ show: Bool = true)
-        case animate(_ bool: Bool = true)
-    }
+//    public enum Option {
+//        case defaultTitle(_ title: String = "OK")
+//        case cancelTitle(_ title: String = "Cancel")
+//        case showCancel(_ show: Bool = true)
+//        case showOK(_ show: Bool = true)
+//        case animate(_ bool: Bool = true)
+//    }
     
     public struct Options {
         var defaultTitle = "OK"
