@@ -13,6 +13,12 @@ public extension Collection where Indices.Iterator.Element == Index {
     }
 }
 
+public extension Dictionary {
+    subscript(exists index: Key) -> Value? {
+        return keys.contains(index) ? self[index] : nil
+    }
+}
+
 public extension Dictionary where Key: Hashable, Value: AdditiveArithmetic {
     mutating func merge(addingWith dict: [Key: Value]) {
         self.merge(dict) { (lhs, rhs) -> Value in
