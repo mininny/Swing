@@ -28,6 +28,20 @@ final class ExtensionsTest: XCTestCase {
         XCTAssertEqual(strArr["4"], 4.4)
         XCTAssertEqual(strArr["1"], 1.1)
     }
+    
+    func test_UIColor_UIColorToHex() {
+        let blackColorHex = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).toHexString()
+        XCTAssertEqual(blackColorHex, "#000000")
+        
+        let whiteColorHex = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).toHexString().uppercased()
+        XCTAssertEqual(whiteColorHex, "#FFFFFF")
+        
+        let blackColor = UIColor(fromHex: "000000")
+        XCTAssertEqual(blackColor, #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        
+        let whiteColor = UIColor(fromHex: "#ffffff")
+        XCTAssertEqual(whiteColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    }
 
     static var allTests = [
         ("test_collection_exists", test_collection_exists),
