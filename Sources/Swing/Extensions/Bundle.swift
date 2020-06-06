@@ -8,9 +8,9 @@
 import Foundation
 
 public extension Bundle {
-    var version: String? { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String }
+    var version: String? { self.infoDictionary?["CFBundleShortVersionString"] as? String }
     
-    var name: String? { Bundle.main.infoDictionary?["CFBundleName"] as? String }
+    var name: String? { self.infoDictionary?["CFBundleName"] as? String }
     
-    var build: String? { Bundle.main.infoDictionary?["CFBundleVersion"] as? String }
+    var build: String? { self.infoDictionary?["CFBundleVersion"] as? String }
 }
