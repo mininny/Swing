@@ -5,7 +5,6 @@
 //  Created by Minhyuk Kim on 2020/04/26.
 //
 
-import UIKit
 import Foundation
 
 public extension Data {

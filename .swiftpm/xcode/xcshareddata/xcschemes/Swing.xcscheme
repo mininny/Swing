@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1150"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftUtil"
-               BuildableName = "SwiftUtil"
-               BlueprintName = "SwiftUtil"
+               BlueprintIdentifier = "Swing"
+               BuildableName = "Swing"
+               BlueprintName = "Swing"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftUtilTests"
-               BuildableName = "SwiftUtilTests"
-               BlueprintName = "SwiftUtilTests"
+               BlueprintIdentifier = "SwingTests"
+               BuildableName = "SwingTests"
+               BlueprintName = "SwingTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftUtilTests"
-               BuildableName = "SwiftUtilTests"
-               BlueprintName = "SwiftUtilTests"
+               BlueprintIdentifier = "SwingTests"
+               BuildableName = "SwingTests"
+               BlueprintName = "SwingTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -74,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SwiftUtil"
-            BuildableName = "SwiftUtil"
-            BlueprintName = "SwiftUtil"
+            BlueprintIdentifier = "Swing"
+            BuildableName = "Swing"
+            BlueprintName = "Swing"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

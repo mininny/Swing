@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftUtil
+@testable import Swing
 
 final class ExtensionsTest: XCTestCase {
     
