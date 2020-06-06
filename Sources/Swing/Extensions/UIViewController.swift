@@ -5,6 +5,7 @@
 //  Created by Minhyuk Kim on 2020/04/26.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIViewController {
@@ -18,3 +19,4 @@ public extension UIViewController {
         return nil
     }
 }
+#endif

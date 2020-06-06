@@ -5,6 +5,7 @@
 //  Created by Minhyuk Kim on 2020/05/04.
 //
 
+#if os(iOS)
 import UIKit
 
 public class Keyboard {
@@ -59,3 +60,5 @@ public class Keyboard {
         }
     }
 }
+
+#endif

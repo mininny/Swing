@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Date {
-    func removeTimeStamp(keeping component: Calendar.Component = .day) -> Date? {
+    func removeTimestamp(keeping component: Calendar.Component = .day) -> Date? {
         var calendarComponents: [Calendar.Component] = [ .nanosecond,
                                                          .second,
                                                          .minute,
@@ -40,6 +40,8 @@ public extension Date {
             calendarComponents.removeFirst(8)
         case .calendar:
             calendarComponents.removeFirst(9)
+        default:
+            break
         }
         
         return Calendar.current.date(from: Calendar.current.dateComponents(Set(calendarComponents), from: self))

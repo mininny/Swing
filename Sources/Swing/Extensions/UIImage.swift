@@ -5,6 +5,7 @@
 //  Created by Minhyuk Kim on 2020/04/26.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIImage {
@@ -23,3 +24,4 @@ public extension UIImage {
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
 }
+#endif

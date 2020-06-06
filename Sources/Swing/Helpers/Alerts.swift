@@ -5,6 +5,7 @@
 //  Created by Minhyuk Kim on 2020/04/29.
 //
 
+#if os(iOS)
 import UIKit
 
 class Alerts {
@@ -41,3 +42,4 @@ class Alerts {
     }
 }
 
+#endif

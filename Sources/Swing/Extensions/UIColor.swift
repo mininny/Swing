@@ -4,7 +4,7 @@
 //
 //  Created by Minhyuk Kim on 2020/04/26.
 //
-
+#if os(iOS)
 import UIKit
 
 public extension UIColor {
@@ -47,3 +47,4 @@ public extension UIColor {
         return NSString(format:"#%06x", rgb) as String
     }
 }
+#endif

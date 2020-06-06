@@ -6,7 +6,42 @@ Forget about creating a new `Utils` folder and adding the same extensions again 
 
 Simply add `Swing` to get going with the essential Swift Utility functions.
 
+Table of Contents
+=============
+
+  * [Usage](#usage)
+  * [Extensions](#extensions)
+        * [UIView](#uiview)
+            * [round](#round)
+        * [UIViewController](#uiviewcontroller)
+            * [topViewController](#topviewcontroller)
+        * [UIWindow](#uiwindow)
+            * [keyWindow](#keywindow)
+        * [UIImage](#uiimage)
+            * [getPixelColor](#getpixelcolor)
+        * [UIColor](#uicolor)
+            * [Init from Hex](#init-from-hex)
+            * [HexString to UIColor](#hexstringtouicolor)
+            * [toHexString](#tohexstring)
+        * [String](#string)
+            * [localized](#localized)
+            * [removeExcept](#removeexcept)
+            * [condensed](#condensed)
+        * [Date](#date)
+            * [removeTimestamp](#removetimestamp)
+        * [Data](#data)
+            * [hexString](#hexstring)
+        * [Collection](#collection)
+            * [Subscript exists](#subscript-exists)
+        * [Bundle](#bundle)
+            * [version](#version)
+            * [name](#name)
+            * [build](#build)
+            
+  
 ### Usage
+
+> Currently, only iOS is fully supported. Support for other platforms will be coming soon.
 
 #### Swift Package Manager
 In your Xcode Project, go to File -> Swift Packages -> Add Package Dependency -> `https://github.com/mininny/Swing`
@@ -15,6 +50,7 @@ In your Xcode Project, go to File -> Swift Packages -> Add Package Dependency ->
 If you do not prefer having all of the files added to your projects, simply copy & paste the code snippets that you like! 
 
 There is no restriction upon what you can do with this library, and it is licensed under WTFPL. :) 
+
 
 ## Extensions
 
@@ -27,7 +63,8 @@ self.layer.cornerRadius = side/2
 ```
 
 ### UIViewController
-#### topViewController ![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
+#### topViewController 
+![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
 > static var topViewController: UIViewController? -> returns the topmost view controller of the current window 
 ```swift
 if var topController = UIWindow.keyWindow?.rootViewController {
@@ -40,7 +77,8 @@ return nil
 ```
 
 ### UIWindow
-#### keyWindow ![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
+#### keyWindow 
+![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
 > static var keyWindow: UIWindow? -> returns the keyWindow of the application
 ```swift
 UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -136,10 +174,10 @@ return trimmed.isEmpty ? nil : trimmed
 ```
 
 ### Date
-#### removeTimeStamp
-> func removeTimeStamp(keeping: Calendar.Component = .day): Date? -> removes all components of the given `Date` until the specified `component`
+#### removeTimestamp
+> func removeTimestamp(keeping: Calendar.Component = .day): Date? -> removes all components of the given `Date` until the specified `component`
 > 
-> i.e., for removeTimeStamp(keeping: .day), returned Date will look like `June, 7, 2020` 
+> i.e., for removeTimestamp(keeping: .day), returned Date will look like `June, 7, 2020` 
 ```swift
 var calendarComponents: [Calendar.Component] = [ .nanosecond,
                                                  .second,
@@ -220,5 +258,10 @@ self.infoDictionary?["CFBundleVersion"] as? String
 ### Testing
 
 --- 
+
+### RoadMap
+- Add Support for macOS
+- Add cocoapods support
+- Apply Swiftlint
 
 Feel free to create requests for new methods!
