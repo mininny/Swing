@@ -11,32 +11,33 @@ Table of Contents
 
   * [Usage](#usage)
   * [Extensions](#extensions)
-        * [UIView](#uiview)
-            * [round](#round)
-        * [UIViewController](#uiviewcontroller)
-            * [topViewController](#topviewcontroller)
-        * [UIWindow](#uiwindow)
-            * [keyWindow](#keywindow)
-        * [UIImage](#uiimage)
-            * [getPixelColor](#getpixelcolor)
-        * [UIColor](#uicolor)
-            * [Init from Hex](#init-from-hex)
-            * [HexString to UIColor](#hexstringtouicolor)
-            * [toHexString](#tohexstring)
-        * [String](#string)
-            * [localized](#localized)
-            * [removeExcept](#removeexcept)
-            * [condensed](#condensed)
-        * [Date](#date)
-            * [removeTimestamp](#removetimestamp)
-        * [Data](#data)
-            * [hexString](#hexstring)
-        * [Collection](#collection)
-            * [Subscript exists](#subscript-exists)
-        * [Bundle](#bundle)
-            * [version](#version)
-            * [name](#name)
-            * [build](#build)
+    * [UIView](#uiview)
+      * [round](#round)
+    * [UIViewController](#uiviewcontroller)
+      * [topViewController](#topviewcontroller)
+    * [UIWindow](#uiwindow)
+      * [keyWindow](#keywindow)
+    * [UIImage](#uiimage)
+      * [getPixelColor](#getpixelcolor)
+    * [UIColor](#uicolor)
+      * [Init from Hex](#init-from-hex)
+      * [HexString to UIColor](#hexstringtouicolor)
+      * [toHexString](#tohexstring)
+    * [String](#string)
+      * [localized](#localized)
+      * [removeExcept](#removeexcept)
+      * [condensed](#condensed)
+    * [Date](#date)
+      * [removeTimestamp](#removetimestamp)
+    * [Data](#data)
+      * [hexString](#hexstring)
+    * [Collection](#collection)
+      * [Subscript exists](#subscript-exists)
+    * [Bundle](#bundle)
+      * [version](#version)
+      * [name](#name)
+      * [build](#build)
+  * [Roadmap](#roadmap)
             
   
 ### Usage
@@ -259,7 +260,7 @@ self.infoDictionary?["CFBundleVersion"] as? String
 
 --- 
 
-### RoadMap
+### Roadmap
 - Add Support for macOS
 - Add cocoapods support
 - Apply Swiftlint
