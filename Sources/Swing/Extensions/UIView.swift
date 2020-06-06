@@ -12,6 +12,4 @@ public extension UIView {
         guard let side = [self.frame.width, self.frame.height].min() else { return }
         self.layer.cornerRadius = side/2
     }
-    
-    
 }
