@@ -37,6 +37,18 @@ Table of Contents
       * [version](#version)
       * [name](#name)
       * [build](#build)
+  * [Helpers](#helpers)
+    * [Alerts](#alerts)
+      * [showAlert](#showalert)
+    * [Keyboard](#keyboard)
+      * [startObserving](#startobserving)
+      * [stopObserving](#stopobserving)
+      * [addKeyboardObserver](#addkeyboardobserver)
+    * [Objc](#objc)
+      * [set<T>](#objc-set)
+      * [get<T>](#objc-get)
+    * [Testing](#testing)
+      * [random<String>](#random-string)
   * [Roadmap](#roadmap)
             
   
@@ -56,17 +68,17 @@ There is no restriction upon what you can do with this library, and it is licens
 ## Extensions
 
 ### UIView
-#### round
-> func round() -> make the corner of the view rounded.
+#### func round()<a name="round"></a>
+> makes the corner of the view rounded.
 ```swift
 guard let side = [self.frame.width, self.frame.height].min() else { return }
 self.layer.cornerRadius = side/2
 ```
 
 ### UIViewController
-#### topViewController 
+#### static var topViewController: UIViewController?<a name="topviewcontroller"></a> 
 ![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
-> static var topViewController: UIViewController? -> returns the topmost view controller of the current window 
+> returns the topmost view controller of the current window 
 ```swift
 if var topController = UIWindow.keyWindow?.rootViewController {
     while let presentedViewController = topController.presentedViewController {
@@ -78,16 +90,16 @@ return nil
 ```
 
 ### UIWindow
-#### keyWindow 
+#### static var keyWindow: UIWindow?<a name="keywindow"></a> 
 ![Deprecated](https://img.shields.io/badge/deprecated-iOS%2013.0-yellow.svg)
-> static var keyWindow: UIWindow? -> returns the keyWindow of the application
+> returns the keyWindow of the application
 ```swift
 UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 ```
 
 ### UIImage
-#### getPixelColor
-> func getPixelColor(at:CGPoint): UIColor? -> returns the UIColor of given CGPoint in a UIView. 
+#### func getPixelColor(at: CGPoint) -> UIColor?<a name="getpixelcolor"></a>
+> returns the UIColor of given CGPoint in a UIView. 
 ```swift
 guard let pixelData = self.cgImage?.dataProvider?.data else { return nil }
 
@@ -104,8 +116,8 @@ return UIColor(red: r, green: g, blue: b, alpha: a)
 ```
 
 ### UIColor
-#### init from hex
-> init?(fromHex:String, alpha:CGFloat) -> initializes UIColor with given hex string value and alpha value.
+#### init?(fromHex: String, alpha: CGFloat)<a name="init-from-hex"></a>
+> initializes UIColor with given hex string value and alpha value.
 ```swift
 var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -128,14 +140,14 @@ self.init(
 )
 ```
 
-#### hexStringToUIColor
-> static func hexStringToUIColor(hex:String, alpha:CGFloat): UIColor? -> returns a UIColor with given hex string value and alpha value. 
+#### static func hexStringToUIColor(hex: String, alpha: CGFloat) -> UIColor?<a name="hexstringtouicolor"></a>
+> returns a UIColor with given hex string value and alpha value. 
 ```swift
 UIColor(fromHex: hex, alpha: alpha)
 ```
 
-#### toHexString
-> func toHexString(): String -> converts UIColor to hexString
+#### func toHexString() -> String<a name="tohexstring"></a>
+> converts UIColor to hexString
 ```swift
 var r:CGFloat = 0
 var g:CGFloat = 0
@@ -150,14 +162,14 @@ return NSString(format:"#%06x", rgb) as String
 ```
 
 ### String
-#### localized
-> func localized(comment:String = ""): String -> returns localized string with the given comment
+#### func localized(comment:String ="") -> String<a name="localized"></a>
+> returns localized string with the given comment
 ```swift
 NSLocalizedString(self, comment: comment)
 ```
 
-#### removeExcept
-> mutating func removeExcept(count: Int) -> remove all characters in the string except `count` number of characters. Trailing characters are trimmed by default.
+#### mutating func removeExcept(count: Int)<a name="removeexcept"></a> 
+> remove all characters in the string except `count` number of characters. Trailing characters are trimmed by default.
 ```swift
 if self.count > count {
     self.removeLast(self.count - count)
@@ -166,8 +178,8 @@ if self.count > count {
 }
 ```
 
-#### condensed
-> var condensed: String? -> whitespace and newline trimmed string. Returns nil if trimmed string is empty, and regular string otherwise. 
+#### var condensed: String?<a name="condensed"></a>
+> whitespace and newline trimmed string. Returns nil if trimmed string is empty, and regular string otherwise. 
 ```swift
 let trimmed = self.trimmingCharacters(in: .whitespacesAndNewlines)
 
@@ -175,8 +187,8 @@ return trimmed.isEmpty ? nil : trimmed
 ```
 
 ### Date
-#### removeTimestamp
-> func removeTimestamp(keeping: Calendar.Component = .day): Date? -> removes all components of the given `Date` until the specified `component`
+#### func removeTimestamp(keeping: Calendar.Component = .day) -> Date?<a name="removetimestamp"></a>
+> removes all components of the given `Date` until the specified `component`
 > 
 > i.e., for removeTimestamp(keeping: .day), returned Date will look like `June, 7, 2020` 
 ```swift
@@ -217,33 +229,33 @@ return Calendar.current.date(from: Calendar.current.dateComponents(Set(calendarC
 ```
 
 ### Data
-#### hexString
-> var hexString: String -> returns the hex value representation of the given `Data`. Useful when dealing with push tokens.
+#### var hexString: String<a name="hexstring"></a>
+> returns the hex value representation of the given `Data`. Useful when dealing with push tokens.
 ```swift
 var hexString: String { self.map { String(format: "%02x", $0) }.joined() }
 ```
 ### Collection
-#### subscript exists
-> subscript(exists: Index): Iterator.Element? -> returns nil if the subscript does not exist in the collection's indexes. Returns regular value if it exists. Useful when dealing with safe collection handling
+#### subscript(exists: Index) -> Iterator.Element?<a name="subscript-exists"></a>
+> returns nil if the subscript does not exist in the collection's indexes. Returns regular value if it exists. Useful when dealing with safe collection handling
 ```swift
 return indices.contains(index) ? self[index] : nil
 ```
 
 ### Bundle
-#### version
-> var version: String? -> returns the `CFBundleShortVersionString` of the bundle, aka. version number, of the project. 
+#### var version: String?<a name="version"></a>
+> returns the `CFBundleShortVersionString` of the bundle, aka. version number, of the project. 
 ```swift
 self.infoDictionary?["CFBundleShortVersionString"] as? String
 ```
 
-#### name
-> var name: String? -> returns the `CFBundleName` of the bundle, aka. bundle name, of the project.
+#### var name: String?<a name="name"></a>
+> returns the `CFBundleName` of the bundle, aka. bundle name, of the project.
 ```swift
 self.infoDictionary?["CFBundleName"] as? String
 ```
 
-#### build
-> var build: String? -> returns the `CFBundleVersion` of the bundle, aka. build number, of the project.
+#### var build: String?<a name="build"></a>
+> returns the `CFBundleVersion` of the bundle, aka. build number, of the project.
 ```swift
 self.infoDictionary?["CFBundleVersion"] as? String
 ```
@@ -252,11 +264,77 @@ self.infoDictionary?["CFBundleVersion"] as? String
 
 ### Alerts
 
+#### static func showAlert(title,message,on,options,completion)<a name="showalert"></a>
+> create a `UIAlertController` and present it on the viewController.
+```swift
+let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+if options.showOK{
+    let okAction = UIAlertAction(title: options.defaultTitle, style: .default, handler: nil)
+    alert.addAction(okAction)
+}
+
+if options.showCancel {
+    let cancelAction = UIAlertAction(title: options.cancelTitle, style: .cancel, handler: nil)
+    alert.addAction(cancelAction)
+}
+
+vc.present(alert, animated: options.animate, completion: completion)
+```
+
 ### Keyboard
+> Helper module that observes changes in iOS Keyboard. You can register custom handler that gets called when the keyboard's frame changes. 
+```swift
+```
+#### func startObserving(handler)<a name="startobserving"></a>
+> Registers a `KeyboardHeightHandler` handler that observes change in keyboard frame. 
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+self.keyBoardNotificationHandler = handler
+```
+
+#### func stopObserving()<a name="stopobserving"></a>
+> Removes the registered `KeyboardHeightHandler` and stops observing keyboard changes.
+```swift
+NotificationCenter.default.removeObserver(self)
+self.keyBoardNotificationHandler = nil
+```
+
+#### static func addKeyboardObserver(show: Selector?, hide: Selector?, onObserver: Any)<a name="addkeyboardobserver"></a>
+> Add custom observers to the keyboard using given selectors.
+```swift
+if let action = showAction {
+    NotificationCenter.default.addObserver(observer, selector: action, name: UIWindow.keyboardWillShowNotification, object: nil)
+}
+
+if let action = hideAction {
+    NotificationCenter.default.addObserver(observer, selector: action, name: UIWindow.keyboardWillHideNotification, object: nil)
+}
+```
 
 ### Objc
+> Helper module that uses objective-C API to do things that are impossible with Swift.
+
+#### static func set<T>(value: T, key: UnsafeRawPointer, policy: objc_AssociationPolicy)<a name="objc-set"></a>
+> Saves a value to the container with a specific key using `objc_setAssociatedObject`.
+> 
+> This allows you to create stored properties within a extension, for example.
+```swift
+objc_setAssociatedObject(self, key, value, policy)
+```
+
+#### static func get<T>(key: UnsafeRawPointer) -> T?<a name="objc-get"></a>
+> Retrieves the value from the container with a specific key using `objc_getAssociatedObject`.
+```swift
+return objc_getAssociatedObject(self, key) as? T
+```
 
 ### Testing
+> Helper module that contains extensions that makes unit test implementation and mocking easier. 
+#### static func random() -> String<a name="random-string"></a>
+```swift
+return UUID().uuidString
+```
 
 --- 
 

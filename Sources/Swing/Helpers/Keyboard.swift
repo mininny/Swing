@@ -20,8 +20,9 @@ public class Keyboard {
     
     var keyBoardNotificationHandler: KeyboardHeightHandler?
     
-    func startObserving(_ handler: KeyboardHeightHandler) {
+    func startObserving(_ handler: @escaping KeyboardHeightHandler) {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        self.keyBoardNotificationHandler = handler
     }
     
     @objc func keyboardNotification(notification: NSNotification) {
