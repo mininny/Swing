@@ -6,6 +6,18 @@ Forget about creating a new `Utils` folder and adding the same extensions again 
 
 Simply add `Swing` to get going with the essential Swift Utility functions.
 
+### Usage
+
+> Currently, only iOS is fully supported. Support for other platforms will be coming soon.
+
+#### Swift Package Manager
+In your Xcode Project, go to File -> Swift Packages -> Add Package Dependency -> `https://github.com/mininny/Swing`
+
+#### Copy & Paste
+If you do not prefer having all of the files added to your projects, simply copy & paste the code snippets that you like! 
+
+There is no restriction upon what you can do with this library, and it is licensed under WTFPL. :) 
+
 Table of Contents
 =============
 
@@ -50,20 +62,6 @@ Table of Contents
     * [Testing](#testing)
       * [random<String>](#random-string)
   * [Roadmap](#roadmap)
-            
-  
-### Usage
-
-> Currently, only iOS is fully supported. Support for other platforms will be coming soon.
-
-#### Swift Package Manager
-In your Xcode Project, go to File -> Swift Packages -> Add Package Dependency -> `https://github.com/mininny/Swing`
-
-#### Copy & Paste
-If you do not prefer having all of the files added to your projects, simply copy & paste the code snippets that you like! 
-
-There is no restriction upon what you can do with this library, and it is licensed under WTFPL. :) 
-
 
 ## Extensions
 
